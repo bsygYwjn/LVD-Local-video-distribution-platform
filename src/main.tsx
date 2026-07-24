@@ -9,6 +9,7 @@ import wasmUrl from "jassub/dist/wasm/jassub-worker.wasm?url";
 import modernWasmUrl from "jassub/dist/wasm/jassub-worker-modern.wasm?url";
 import {
   AlertTriangle,
+  Bot,
   Captions,
   ChevronLeft,
   ChevronDown,
@@ -728,6 +729,7 @@ function SettingsPanel({ overview, onRefresh, onNotice }: { overview: Overview |
     <div className="admin-content settings-grid">
       <section className="panel setting-card"><div className={`setting-icon ${overview?.tools.available ? "ready" : "warning"}`}>{overview?.tools.available ? <CheckCircle2 /> : <AlertTriangle />}</div><div><span className="eyebrow">MEDIA ENGINE</span><h2>{overview?.tools.available ? "FFmpeg 已就绪" : "等待安装 FFmpeg"}</h2><p>{overview?.tools.available ? overview.tools.version : overview?.tools.hint}</p><button className="secondary-button" onClick={refreshTools}><RefreshCw size={16} />重新检查</button></div></section>
       <section className="panel setting-card"><div className={`setting-icon ${overview?.autostart.enabled ? "ready" : "standby"}`}><Power /></div><div><span className="eyebrow">WINDOWS STARTUP</span><h2>开机自启{overview?.autostart.enabled ? "已开启" : "已关闭"}</h2><p>开启后，每次登录 Windows 都会在后台启动 LVD；不会自动打开管理网页或信息窗口。</p><button className={overview?.autostart.enabled ? "secondary-button" : "primary-button"} onClick={toggleAutostart}>{overview?.autostart.enabled ? "关闭开机自启" : "开启开机自启"}</button></div></section>
+      <section className="panel setting-card"><div className="setting-icon ready"><Bot /></div><div><span className="eyebrow">PROJECT DEVELOPERS</span><h2>bsygYwjn · Codex</h2><p>共同参与 LVD 的设计、开发与维护。</p></div></section>
     </div>
   );
 }
