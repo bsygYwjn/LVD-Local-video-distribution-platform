@@ -70,7 +70,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 .client-player-main { width: min(1500px, 100%); margin: 0 auto; padding: 34px clamp(22px, 5vw, 76px) 80px; }
 
 .library-hero { position: relative; min-height: 290px; overflow: hidden; display: flex; align-items: flex-end; justify-content: space-between; gap: 44px; margin-bottom: 52px; padding: clamp(34px, 5vw, 62px); border: 1px solid rgba(255,255,255,.1); border-radius: 32px; background: linear-gradient(110deg, rgba(18,21,29,.96) 8%, rgba(18,21,29,.76) 48%, hsla(var(--hero-hue),55%,27%,.52)), radial-gradient(circle at 88% 8%, hsla(calc(var(--hero-hue) + 45),80%,70%,.2), transparent 34%); box-shadow: 0 32px 80px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.09); }
-.series-hero { border-left: 0; }
+.library-hero { border-left: 0; }
 .library-hero::after { position: absolute; inset: 0; content: ""; pointer-events: none; opacity: .4; background: linear-gradient(115deg, transparent 45%, rgba(255,255,255,.035) 45.15%, transparent 45.3%), linear-gradient(70deg, transparent 66%, rgba(255,255,255,.025) 66.15%, transparent 66.3%); }
 .hero-copy { position: relative; z-index: 1; max-width: 760px; }
 .hero-kicker, .section-kicker { display: block; color: var(--mint); font-size: 10px; font-weight: 750; letter-spacing: .16em; }
