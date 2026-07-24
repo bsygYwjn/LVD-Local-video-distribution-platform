@@ -1,0 +1,16 @@
+# Dependencies and package-manager cache
+node_modules/
+.pnpm-store/
+
+# Generated web and TypeScript output
+dist/
+*.tsbuildinfo
+
+# Local runtime state and packaged binaries
+data/
+runtime/
+
+# Local logs and operating-system metadata
+*.log
+Thumbs.db
+.DS_Store
