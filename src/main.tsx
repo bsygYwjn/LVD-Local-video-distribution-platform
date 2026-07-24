@@ -435,20 +435,16 @@ function ClientApp({ catalog, error, onRefresh, theme, onToggleTheme }: {
         {error && <StatusBanner tone="warning" icon={<AlertTriangle size={18} />}>{error}</StatusBanner>}
         {scanNotice && <StatusBanner tone={scanNotice.tone} icon={scanNotice.tone === "warning" ? <AlertTriangle size={18} /> : <CheckCircle2 size={18} />}>{scanNotice.text}</StatusBanner>}
         <section className={`library-hero${selectedSeries ? " series-hero" : ""}`}>
-          <div className="hero-copy">
-            {selectedSeries
-              ? <button className="library-back" onClick={openLibrary}><ChevronLeft size={17} />全部作品</button>
-              : <span className="hero-kicker">PRIVATE CINEMA · LOCAL ONLY</span>}
-            <h1>{selectedSeries ? selectedSeries.title : "你的私人放映厅"}</h1>
-            <p>{selectedSeries
-              ? `第 ${selectedSeries.season} 季已整理完成，选择一集即可开始播放。`
-              : "收藏只属于你，播放只发生在家里。挑一部喜欢的作品，安静地看。"}
-            </p>
+          <div className={`hero-copy${selectedSeries ? "" : " hero-copy-brand"}`}>
+            {selectedSeries ? <>
+              <button className="library-back" onClick={openLibrary}><ChevronLeft size={17} />全部作品</button>
+              <h1>{selectedSeries.title}</h1>
+              <p>第 {selectedSeries.season} 季已整理完成，选择一集即可开始播放。</p>
+            </> : <span className="hero-wordmark" aria-label="LVD">LVD</span>}
           </div>
           <div className="hero-stats" aria-label="媒体库概览">
             <div><strong>{selectedSeries ? selectedSeries.mediaCount : series.length}</strong><span>{selectedSeries ? "个视频" : "部作品"}</span></div>
             <div><strong>{selectedSeries ? `S${String(selectedSeries.season).padStart(2, "0")}` : totalVideos}</strong><span>{selectedSeries ? "当前季度" : "个视频"}</span></div>
-            <div className="privacy-stat"><span className="privacy-dot" /><span>局域网直连</span></div>
           </div>
         </section>
         <section className="media-section">
